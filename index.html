@@ -4,9 +4,78 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Heero Chen Porfolio Website</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    <h1>Hello Heero</h1>
+    <header>
+        <a href="#" class="logo">Logo</a>
+        <ul class="navigation">
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Cases</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </header>
+    <section class="parallax">
+        <h2 id="text">Heero Chen Portfolio</h2>
+        <img src="monutain_01.png" id="m1">
+        <img src="trees_02.png" id="t2">
+        <img src="monutain_02.png" id="m2">
+        <img src="trees_01.png" id="t1">
+        <img src="man.png" id="man">
+        <img src="plants.png" id="plants">
+    </section>
+    <section class="sec">
+        <h2>Heero Chen Cases</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur ut quo dolor quibusdam molestiae facilis aut ipsam odit enim, est inventore magni asperiores nesciunt dolorem iste ducimus facere ex voluptas beatae. In optio aliquid nostrum magni aliquam nulla unde doloremque aperiam quae consequuntur quis dolorum dolores mollitia laudantium, perferendis quibusdam aspernatur eaque accusamus! Consequuntur, consequatur. Velit sed odit quo sint et, assumenda iusto est nisi laboriosam magni maxime enim, omnis consectetur quasi, atque quibusdam dolores. Ad, doloribus! Similique autem dolores quos molestiae nesciunt optio natus quia eaque fugiat saepe, sapiente, aperiam omnis reiciendis! Ratione, deserunt, sunt voluptas provident porro ipsam neque fugiat suscipit reprehenderit libero nobis veniam mollitia alias? Vel repellat deserunt in maxime excepturi saepe velit voluptas iste labore, optio ab corporis magni omnis, mollitia illo exercitationem voluptatum nihil nemo veniam expedita placeat? Ducimus, mollitia nam. Unde harum tempore illum quaerat, eaque molestiae voluptatum veniam cum voluptate, maiores voluptatibus neque pariatur nobis sunt dicta laborum consequuntur, quidem eum nesciunt fuga! Quod, a quas. <br><br> neque, vitae est nam saepe odit amet accusamus itaque repellendus distinctio dignissimos minus quis sit, exercitationem quaerat similique? Libero, dicta recusandae? Repellendus, iusto nihil fugiat hic amet itaque nulla beatae voluptatum omnis magni distinctio ullam est quam, culpa tempora harum eaque praesentium dignissimos voluptates provident dolore consequuntur enim velit! Magni officia fugit eum ab voluptatum incidunt ullam quasi enim molestias distinctio sequi perspiciatis laborum soluta dicta aliquid ducimus, alias ea labore. Molestiae temporibus illum quas optio illo dolor alias, nam nesciunt eveniet eaque error tempore perferendis sed deleniti similique sint. Consequuntur laboriosam, velit laborum iusto dolores ipsum, inventore officia doloremque eos recusandae, quidem eum hic? Qui culpa dolorem reiciendis eum deserunt laboriosam odit quasi illum illo esse. Libero quo qui laudantium quasi suscipit harum vel nesciunt exercitationem repudiandae reiciendis accusamus illo expedita iusto ducimus incidunt inventore similique tempore deserunt, architecto ab numquam in labore facere? Ipsa nulla fugit consequuntur ea dicta quidem numquam soluta aut iste nostrum! Similique dignissimos id velit veniam modi quasi soluta, numquam, tempora rerum fuga excepturi. Impedit velit aliquid quia dolores cumque. Aut, magnam, fugit at corporis, neque accusantium sequi ullam vel architecto rem quia! Rerum placeat quia mollitia fugiat ut voluptas totam eius officia facilis voluptatibus ratione culpa, ab atque temporibus recusandae laudantium, eveniet impedit dolorem iure! <br><br>Vitae consequatur vero necessitatibus maiores aliquam numquam adipisci dolorem voluptatem sunt qui suscipit voluptas, itaque dignissimos dolorum nesciunt molestiae dolor nihil laboriosam cupiditate consequuntur. Libero reiciendis corporis, in beatae molestias sequi velit nihil. Doloribus expedita ratione voluptates dolores. Voluptates totam ullam dolores fuga accusantium. Nesciunt asperiores ab numquam voluptates, mollitia exercitationem repudiandae tempora distinctio veniam repellat. Voluptates, exercitationem. Illo, iusto rem laborum error rerum necessitatibus quidem. Tempore eaque ipsum corrupti rem consequatur, deleniti blanditiis labore distinctio, asperiores, in illum? Odit, quisquam. Tempora fugit nesciunt illo ea, ducimus repudiandae esse, deleniti ratione voluptatum natus illum voluptatem ipsa nisi itaque. Pariatur repudiandae exercitationem facere obcaecati, magnam cumque illum aliquid dolor neque ex minus id ea. Modi saepe adipisci pariatur! Magni alias architecto enim nobis optio.
+        </p>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script>
+        gsap.from("#m1", {
+            scrollTrigger : {
+                scrub: true
+            },
+            y: 100, 
+        })
+        gsap.from("#m2", {
+            scrollTrigger : {
+                scrub: true
+            },
+            y: 50, 
+        })
+        gsap.from("#t2", {
+            scrollTrigger : {
+                scrub: true
+            },
+            x: -50, 
+        })
+        gsap.from("#t1", {
+            scrollTrigger : {
+                scrub: true
+            },
+            x: 50, 
+        })
+        gsap.from("#man", {
+            scrollTrigger : {
+                scrub: true
+            },
+            x: -250, 
+        })
+        gsap.from("#plants", {
+            scrollTrigger : {
+                scrub: true
+            },
+            x: -50, 
+        })
+        gsap.from("#text", {
+            scrollTrigger : {
+                scrub: true
+            },
+            x: 300, 
+        })
+    </script>
 </body>
 </html>
