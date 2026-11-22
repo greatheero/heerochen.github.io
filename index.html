@@ -1,81 +1,270 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Heero Chen Porfolio Website</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Heero Chen | Human Factors Engineer | UX Engineer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-    <header>
-        <a href="#" class="logo">Logo</a>
-        <ul class="navigation">
-            <li><a href="#" class="active">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Cases</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    </header>
-    <section class="parallax">
-        <h2 id="text">Heero Chen Portfolio</h2>
-        <img src="monutain_01.png" id="m1">
-        <img src="trees_02.png" id="t2">
-        <img src="monutain_02.png" id="m2">
-        <img src="trees_01.png" id="t1">
-        <img src="man.png" id="man">
-        <img src="plants.png" id="plants">
+
+  <!-- Top Navigation Header -->
+  <header class="w-full px-6 md:px-12 py-7 flex flex-wrap items-center justify-between gap-4">
+    <!-- Brand / Identity -->
+    <a href="#home" onclick="switchView('home'); return false;" class="flex items-center gap-3 group">
+      <span class="w-6 h-6 rounded-full inline-block" style="background-color: #EEA302;"></span>
+      <div class="flex items-baseline gap-2.5">
+        <span class="text-xl md:text-[22px] font-bold tracking-tight text-black">Heero Chen</span>
+        <span class="text-sm md:text-[15px] font-light text-black">Editor</span>
+      </div>
+    </a>
+
+    <!-- Navigation Links -->
+    <nav aria-label="Primary Navigation" class="flex items-center text-[14px] md:text-[15px] font-normal">
+      <a href="#resume" onclick="switchView('resume'); return false;" id="nav-resume" class="nav-item px-4 hover:text-[#EEA302] transition-colors">Resume</a>
+      <a href="#projects" onclick="switchView('projects'); return false;" id="nav-projects" class="nav-item px-4 hover:text-[#EEA302] transition-colors">Projects</a>
+      <a href="#contact" onclick="switchView('contact'); return false;" id="nav-contact" class="nav-item pl-4 hover:text-[#EEA302] transition-colors">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Main Content Container -->
+  <main class="flex-grow flex items-center justify-center px-6 md:px-12 py-10 md:py-16">
+
+    <!-- HOME VIEW -->
+    <section id="view-home" class="page-section active w-full max-w-[1040px]">
+      <div class="flex flex-col md:flex-row items-center justify-center gap-10 md:gap-14 lg:gap-16">
+        
+        <!-- Left: Circular Grayscale Portrait -->
+        <div class="portrait-wrapper shadow-sm">
+          <img 
+            src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=900&q=80" 
+            alt="Heero Chen - Human Factors Engineer / UX Engineer"
+            onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22440%22 height=%22440%22 viewBox=%220 0 440 440%22><rect width=%22440%22 height=%22440%22 fill=%22%239a9a9a%22/><circle cx=%22220%22 cy=%22165%22 r=%2275%22 fill=%22%23d4d4d4%22/><path d=%22M90 420 C90 310 350 310 350 420%22 fill=%22%23d4d4d4%22/></svg>'"
+          />
+        </div>
+
+        <!-- Right: Intro Text & Three Circular Buttons -->
+        <div class="flex flex-col items-center md:items-start text-center md:text-left max-w-[460px]">
+          <h1 class="text-6xl sm:text-7xl lg:text-[92px] font-bold tracking-tight leading-none text-black mb-5">
+            Hello
+          </h1>
+          
+          <h2 class="text-lg md:text-[20px] font-bold text-black mb-2.5">
+            A Bit About Me
+          </h2>
+          
+          <p class="text-[14.5px] leading-[1.65] font-normal text-[#1A1A1A] mb-8 max-w-[390px]">
+            I'm a paragraph. Click here to add your own text and edit me. I'm a great place for you to tell a story and let your users know a little more about you.
+          </p>
+
+          <!-- Circular Navigation Buttons -->
+          <div class="flex items-center justify-center md:justify-start gap-4 sm:gap-5">
+            <button type="button" onclick="switchView('resume')" class="circle-btn btn-resume">
+              Resume
+            </button>
+            <button type="button" onclick="switchView('projects')" class="circle-btn btn-projects">
+              Projects
+            </button>
+            <button type="button" onclick="switchView('contact')" class="circle-btn btn-contact">
+              Contact
+            </button>
+          </div>
+        </div>
+
+      </div>
     </section>
-    <section class="sec">
-        <h2>Heero Chen Cases</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur ut quo dolor quibusdam molestiae facilis aut ipsam odit enim, est inventore magni asperiores nesciunt dolorem iste ducimus facere ex voluptas beatae. In optio aliquid nostrum magni aliquam nulla unde doloremque aperiam quae consequuntur quis dolorum dolores mollitia laudantium, perferendis quibusdam aspernatur eaque accusamus! Consequuntur, consequatur. Velit sed odit quo sint et, assumenda iusto est nisi laboriosam magni maxime enim, omnis consectetur quasi, atque quibusdam dolores. Ad, doloribus! Similique autem dolores quos molestiae nesciunt optio natus quia eaque fugiat saepe, sapiente, aperiam omnis reiciendis! Ratione, deserunt, sunt voluptas provident porro ipsam neque fugiat suscipit reprehenderit libero nobis veniam mollitia alias? Vel repellat deserunt in maxime excepturi saepe velit voluptas iste labore, optio ab corporis magni omnis, mollitia illo exercitationem voluptatum nihil nemo veniam expedita placeat? Ducimus, mollitia nam. Unde harum tempore illum quaerat, eaque molestiae voluptatum veniam cum voluptate, maiores voluptatibus neque pariatur nobis sunt dicta laborum consequuntur, quidem eum nesciunt fuga! Quod, a quas. <br><br> neque, vitae est nam saepe odit amet accusamus itaque repellendus distinctio dignissimos minus quis sit, exercitationem quaerat similique? Libero, dicta recusandae? Repellendus, iusto nihil fugiat hic amet itaque nulla beatae voluptatum omnis magni distinctio ullam est quam, culpa tempora harum eaque praesentium dignissimos voluptates provident dolore consequuntur enim velit! Magni officia fugit eum ab voluptatum incidunt ullam quasi enim molestias distinctio sequi perspiciatis laborum soluta dicta aliquid ducimus, alias ea labore. Molestiae temporibus illum quas optio illo dolor alias, nam nesciunt eveniet eaque error tempore perferendis sed deleniti similique sint. Consequuntur laboriosam, velit laborum iusto dolores ipsum, inventore officia doloremque eos recusandae, quidem eum hic? Qui culpa dolorem reiciendis eum deserunt laboriosam odit quasi illum illo esse. Libero quo qui laudantium quasi suscipit harum vel nesciunt exercitationem repudiandae reiciendis accusamus illo expedita iusto ducimus incidunt inventore similique tempore deserunt, architecto ab numquam in labore facere? Ipsa nulla fugit consequuntur ea dicta quidem numquam soluta aut iste nostrum! Similique dignissimos id velit veniam modi quasi soluta, numquam, tempora rerum fuga excepturi. Impedit velit aliquid quia dolores cumque. Aut, magnam, fugit at corporis, neque accusantium sequi ullam vel architecto rem quia! Rerum placeat quia mollitia fugiat ut voluptas totam eius officia facilis voluptatibus ratione culpa, ab atque temporibus recusandae laudantium, eveniet impedit dolorem iure! <br><br>Vitae consequatur vero necessitatibus maiores aliquam numquam adipisci dolorem voluptatem sunt qui suscipit voluptas, itaque dignissimos dolorum nesciunt molestiae dolor nihil laboriosam cupiditate consequuntur. Libero reiciendis corporis, in beatae molestias sequi velit nihil. Doloribus expedita ratione voluptates dolores. Voluptates totam ullam dolores fuga accusantium. Nesciunt asperiores ab numquam voluptates, mollitia exercitationem repudiandae tempora distinctio veniam repellat. Voluptates, exercitationem. Illo, iusto rem laborum error rerum necessitatibus quidem. Tempore eaque ipsum corrupti rem consequatur, deleniti blanditiis labore distinctio, asperiores, in illum? Odit, quisquam. Tempora fugit nesciunt illo ea, ducimus repudiandae esse, deleniti ratione voluptatum natus illum voluptatem ipsa nisi itaque. Pariatur repudiandae exercitationem facere obcaecati, magnam cumque illum aliquid dolor neque ex minus id ea. Modi saepe adipisci pariatur! Magni alias architecto enim nobis optio.
-        </p>
+
+    <!-- RESUME SUB-VIEW -->
+    <section id="view-resume" class="page-section w-full max-w-[960px]">
+      <div class="mb-12 flex items-center justify-between">
+        <h1 class="text-4xl md:text-5xl font-bold tracking-tight">Resume</h1>
+        <button onclick="switchView('home')" class="text-sm underline hover:text-[#EEA302]">← Back to Home</button>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pb-12 border-b border-[#C7C7C7]">
+        <h2 class="text-2xl font-bold">Work<br />Experience</h2>
+        <div class="md:col-span-2 space-y-8">
+          <div class="grid grid-cols-1 sm:grid-cols-4 gap-2">
+            <span class="text-sm text-neutral-600">2035 - Present</span>
+            <div class="sm:col-span-3">
+              <h3 class="font-bold text-lg">Senior Editor</h3>
+              <p class="text-[14.5px] leading-relaxed mt-1 text-neutral-800">
+                I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font.
+              </p>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-4 gap-2">
+            <span class="text-sm text-neutral-600">2035 - 2035</span>
+            <div class="sm:col-span-3">
+              <h3 class="font-bold text-lg">Writer at Large</h3>
+              <p class="text-[14.5px] leading-relaxed mt-1 text-neutral-800">
+                I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 py-12">
+        <h2 class="text-2xl font-bold">Education</h2>
+        <div class="md:col-span-2 space-y-6">
+          <div class="grid grid-cols-1 sm:grid-cols-4 gap-2">
+            <span class="text-sm text-neutral-600">2035 - 2035</span>
+            <div class="sm:col-span-3">
+              <h3 class="font-bold text-lg">Establishment Name | Master's Degree</h3>
+              <p class="text-[14.5px] leading-relaxed mt-1 text-neutral-800">
+                I'm a paragraph. Click here to add your own text and edit me. Let your users get to know you.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
-    <script>
-        gsap.from("#m1", {
-            scrollTrigger : {
-                scrub: true
-            },
-            y: 100, 
-        })
-        gsap.from("#m2", {
-            scrollTrigger : {
-                scrub: true
-            },
-            y: 50, 
-        })
-        gsap.from("#t2", {
-            scrollTrigger : {
-                scrub: true
-            },
-            x: -50, 
-        })
-        gsap.from("#t1", {
-            scrollTrigger : {
-                scrub: true
-            },
-            x: 50, 
-        })
-        gsap.from("#man", {
-            scrollTrigger : {
-                scrub: true
-            },
-            x: -250, 
-        })
-        gsap.from("#plants", {
-            scrollTrigger : {
-                scrub: true
-            },
-            x: -50, 
-        })
-        gsap.from("#text", {
-            scrollTrigger : {
-                scrub: true
-            },
-            x: 300, 
-        })
-    </script>
+
+    <!-- PROJECTS SUB-VIEW -->
+    <section id="view-projects" class="page-section w-full max-w-[960px]">
+      <div class="mb-12 flex items-center justify-between">
+        <h1 class="text-4xl md:text-5xl font-bold tracking-tight">Projects</h1>
+        <button onclick="switchView('home')" class="text-sm underline hover:text-[#FF3B25]">← Back to Home</button>
+      </div>
+
+      <div class="space-y-14">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          <div>
+            <h2 class="text-2xl font-bold mb-3">Project Name 01</h2>
+            <p class="text-[14.5px] leading-relaxed text-neutral-800">
+              I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font. I’m a great place for you to tell a story and let your users know a little more about you.
+            </p>
+          </div>
+          <div class="bg-neutral-300 h-64 flex items-center justify-center text-neutral-600 font-medium">
+            Editorial Layout Preview 01
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          <div>
+            <h2 class="text-2xl font-bold mb-3">Project Name 02</h2>
+            <p class="text-[14.5px] leading-relaxed text-neutral-800">
+              I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font.
+            </p>
+          </div>
+          <div class="bg-neutral-300 h-64 flex items-center justify-center text-neutral-600 font-medium">
+            Editorial Layout Preview 02
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SUB-VIEW -->
+    <section id="view-contact" class="page-section w-full max-w-[960px]">
+      <div class="mb-10 flex items-center justify-between">
+        <div>
+          <h1 class="text-4xl md:text-5xl font-bold tracking-tight">Contact</h1>
+          <p class="text-sm mt-2 text-neutral-700">Looking forward to hearing from you</p>
+        </div>
+        <button onclick="switchView('home')" class="text-sm underline hover:text-[#008B8E]">← Back to Home</button>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div class="space-y-6">
+          <div>
+            <h3 class="font-bold text-base">Phone</h3>
+            <p class="text-sm mt-1">123-456-7890</p>
+          </div>
+          <div>
+            <h3 class="font-bold text-base">Email</h3>
+            <p class="text-sm mt-1">info@mysite.com</p>
+          </div>
+        </div>
+
+        <form onsubmit="event.preventDefault(); showMessage('Message submitted!');" class="space-y-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-medium mb-1">First Name *</label>
+              <input type="text" required class="w-full border border-black bg-transparent px-3 py-2 text-sm focus:outline-none focus:bg-white" />
+            </div>
+            <div>
+              <label class="block text-xs font-medium mb-1">Last Name *</label>
+              <input type="text" required class="w-full border border-black bg-transparent px-3 py-2 text-sm focus:outline-none focus:bg-white" />
+            </div>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-medium mb-1">Email *</label>
+              <input type="email" required class="w-full border border-black bg-transparent px-3 py-2 text-sm focus:outline-none focus:bg-white" />
+            </div>
+            <div>
+              <label class="block text-xs font-medium mb-1">Subject</label>
+              <input type="text" class="w-full border border-black bg-transparent px-3 py-2 text-sm focus:outline-none focus:bg-white" />
+            </div>
+          </div>
+          <div>
+            <label class="block text-xs font-medium mb-1">Message</label>
+            <textarea rows="4" class="w-full border border-black bg-transparent px-3 py-2 text-sm focus:outline-none focus:bg-white"></textarea>
+          </div>
+          <button type="submit" class="w-full py-3 rounded-full border border-black font-bold text-base transition-colors hover:bg-[#F3F3F3]" style="background-color: #EEA302;">
+            Submit
+          </button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="w-full px-6 md:px-12 pb-10 mt-auto">
+    <div class="w-full border-t border-[#C7C7C7] pt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-black">
+      
+      <!-- Column 1: Phone -->
+      <div>
+        <h3 class="font-bold text-[15px] mb-1">Phone</h3>
+        <a href="tel:123-456-7890" class="text-[13.5px] font-normal hover:underline">123-456-7890</a>
+      </div>
+
+      <!-- Column 2: Email -->
+      <div>
+        <h3 class="font-bold text-[15px] mb-1">Email</h3>
+        <a href="mailto:info@mysite.com" class="text-[13.5px] font-normal hover:underline">info@mysite.com</a>
+      </div>
+
+      <!-- Column 3: Follow Me -->
+      <div>
+        <h3 class="font-bold text-[15px] mb-1.5">Follow Me</h3>
+        <div class="flex items-center gap-3">
+          <!-- LinkedIn Icon -->
+          <a href="#linkedin" aria-label="LinkedIn" class="text-black hover:opacity-70 transition-opacity">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+              <path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/>
+            </svg>
+          </a>
+          <!-- Twitter Icon -->
+          <a href="#twitter" aria-label="Twitter" class="text-black hover:opacity-70 transition-opacity">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+              <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Column 4: Copyright -->
+      <div class="lg:text-right text-[12px] leading-relaxed text-[#1A1A1A]">
+        <p>© 2027 By Heero Chen.</p>
+        <p>Powered and secured by <a href="https://www.wix.com" target="_blank" rel="noopener noreferrer" class="underline">Wix</a></p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Custom Message Box to replace alert() -->
+  <div id="message-box" class="fixed bottom-4 right-4 bg-black text-white px-6 py-3 rounded shadow-lg transform transition-transform duration-300 translate-y-20 opacity-0 pointer-events-none flex items-center justify-between gap-4 z-50">
+      <span id="message-text">Message sent</span>
+      <button type="button" onclick="closeMessage()" class="text-white hover:text-gray-300 font-bold">&times;</button>
+  </div>
+
+  <script src="js/main.js"></script>
 </body>
 </html>

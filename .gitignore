@@ -1,0 +1,15 @@
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Non-site working files
+task_examples/
+
+# Editor / local tool settings
+.vscode/
+.idea/
+.claude/settings.local.json
+
+# Secrets / future-proofing
+.env
+node_modules/
