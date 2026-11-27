@@ -1,14 +1,14 @@
 # Heero Yang-Peng Chen
-Senior Innovation Project Manager · Human Factors Engineer · UX Designer
+Human Factors Engineer | Hardware UX Designer | Senior Innovation Project Manager
 
 ## Profile
 
-Human Factors and UX design professional with 18+ years of experience in hardware and software product development and user-centered design, supported by an M.S. in Ergonomics and Safety Management. At Logitech, I lead user studies on gaming peripheral interactions, combining controlled comparisons, interviews, sensor measurements, natural language processing and statistical analysis, and I work with engineering and product teams to evaluate concepts and inform development decisions.
+Human factors engineer and UX designer with 18+ years of experience in hardware and software product development. At Logitech, I design and analyze studies of emerging gaming peripheral interactions, combining controlled experiments, sensor measurements, interviews, and statistical analysis. I work with product and engineering teams to turn user insights into product development priorities.
 
 ## Research Practice
 
 - Within-subject experiments
-- User interviews
+- User inquery
 - Sensor-based measurement
 - ANOVA
 - Linear mixed-effects models
@@ -22,15 +22,14 @@ Human Factors and UX design professional with 18+ years of experience in hardwar
 
 Lead human factors research on gaming peripherals, from study design to analysis, and bring the findings to product and engineering teams to inform development decisions.
 
-- **Research program and scope.** Define research use cases, in-game tasks, protocols, performance metrics and data collection for new gaming keyboard interactions, across [number] studies / products since [year].
-- **Keyboard interaction study (esports).** Designed and ran a 24-participant within-subject study with professional and university esports players, using a modified Counter-Strike map and TMR sensors. Analyzed the results with ANOVA and a Bayesian model.
-  - **Result:** [X] ms more time available for an accurate shot and [Y] ms improvement in movement timing, compared with [baseline]. [Perceived benefit by function].
-  - **Outcome:** [product decision, e.g. feature shipped / roadmap change / not pursued].
+- **Research program and scope.** Define research use cases, in-game tasks, protocols, performance metrics and data collection for new gaming peripherals interactions, across 30+ studies and products.
+- **Esports gaming keyboard perfomance study.** Designed and conducted a 24-participant within-subject study with professional and university esports players, using a modified Counter-Strike map and TMR sensors. Analyzed the results with ANOVA.
+  - **Result:** 17% more counter-strafe headshots (8.82 vs. 7.56 average first-shot headshots; 1.06 s faster session completion) with Tunable SOCD and 430 ms (1%) improvement in movement timing with Omni-Direction (projected 150–190 ms CS2 round-start lead), compared with standard SOCD and conventional WASD movement. Tunable SOCD improved shooting stability and timing error tolerance when stopping, while Omni-Direction enabled smooth, joystick-like micro-angle adjustments.
+  - **Outcome:** Tunable SOCD added to the product roadmap to ship in 2027 with the newest PRO gaming keyboard. 
 - **Headset ear-cup material study.** Organized a 30-participant controlled within-subject study in five-player team battles, using iButton temperature/humidity sensors and interviews. Analyzed the data in Python with ANOVA and a linear mixed-effects model.
-  - **Result:** temperature was [similar / difference]; in-cup humidity was [X]% lower than the original material ([statistical result, e.g. p-value or effect size]); participants reported [perceived difference].
-  - **Outcome:** the material was adopted in [product name / launch date].
-- **Test methods.** Developed testing methods for input latency, switch actuation, reaction time, shooting accuracy and gameplay errors, used in [number of projects / teams, or "now standard in Scenario Lab"].
-- **Collaboration and process.** Oversaw Scenario Lab testing processes in collaboration with Logitech's Switzerland-based Ergo Lab, and presented findings to [product / engineering / leadership] teams to inform [type of decision].
+  - **Result:** 4.8% objective reduction in relative humidity (9 of 10 pro gamers showed lower ear-cup humidity after 1 hour of wear, with moisture stabilizing early at a lower plateau), compared with original leather earpads. While subjective humidity ratings remained close (-0.29 vs. -0.07 mean; 0.00 median), LMM analysis revealed perceived humidity is a stronger driver of prolonged comfort than temperature.
+  - **Outcome:** established moisture-management performance as the primary CMF priority for improving long-session earpad comfort.
+- **Test methods.** Developed testing protocol for input latency, switch actuation, reaction time, shooting accuracy and gameplay errors, used in 4 projects, and now standard in Scenario Lab.
 
 ### Senior UX Designer
 > May 2015 – Feb 2019 | ATEN International, New Taipei City, Taiwan
@@ -48,7 +47,9 @@ Lead human factors research on gaming peripherals, from study design to analysis
 ### Senior Product Designer
 > Jul 2014 – May 2015 | DiCon / Global Fiberoptics, Kaohsiung, Taiwan
 
-Defined product direction and led UX/UI design for Kessil aquarium lighting controllers in collaboration with engineering teams.
+Defined product features and led UX/UI design for Kessil aquarium lighting controllers in collaboration with engineering teams.
+
+*Selected products: Kessil AP700; A160WE*
 
 ### UX Design Lead
 > Jan 2014 – Jun 2014 | Rakuten Ichiba, Taipei, Taiwan
@@ -58,7 +59,7 @@ Led UX work for customer service and bookstore websites using user tests and web
 ### UX/UI Designer
 > Aug 2012 – Mar 2013 | 91APP / Nexdoor, Taipei, Taiwan
 
-Used user research and client interviews to define mobile and web application requirements and interaction flows.
+Used user research and client interviews to define mobile and web application requirements and interaction UI screens flows.
 
 ### Product Designer / Interaction Designer
 > Jun 2013 – Jan 2014; Jul 2008 – Sep 2011 | Wistron, New Taipei City, Taiwan

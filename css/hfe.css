@@ -124,7 +124,6 @@ body {
 .c-ink       { color: var(--text-primary); }
 .c-muted     { color: var(--text-muted); }
 .b-subtle    { border-color: var(--border-subtle); }
-.dot-brand   { background-color: var(--accent-primary); }
 .link-primary:hover   { color: var(--accent-primary); }
 .link-secondary:hover { color: var(--accent-secondary); }
 .link-info:hover      { color: var(--status-info); }
