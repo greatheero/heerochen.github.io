@@ -4,13 +4,13 @@
     section: 'grid grid-cols-1 md:grid-cols-3 gap-8 py-12',
     h2: 'text-2xl font-bold',
     body: 'md:col-span-2',
-    p: 'text-[14.5px] leading-relaxed text-neutral-800',
-    pill: 'text-[13px] border border-[#C7C7C7] rounded-full px-3 py-1',
+    p: 'text-[14.5px] leading-relaxed c-ink',
+    pill: 'text-[13px] border b-subtle rounded-full px-3 py-1',
     entry: 'grid grid-cols-1 sm:grid-cols-4 gap-2',
-    dates: 'text-sm text-neutral-600',
+    dates: 'text-sm c-muted',
     h3: 'font-bold text-lg',
-    org: 'text-sm text-neutral-600',
-    note: 'text-[13px] text-neutral-600 mt-2',
+    org: 'text-sm c-muted',
+    note: 'text-[13px] c-muted mt-2',
   };
 
   const inline = (s) => marked.parseInline(s);
@@ -104,7 +104,7 @@
   function render(doc) {
     const last = doc.sections.length - 1;
     return doc.sections.map((s, i) =>
-      `<div class="${C.section}${i < last ? ' border-b border-[#C7C7C7]' : ''}"><h2 class="${C.h2}">${titleHtml(s.title)}</h2>${renderBlocks(s)}</div>`
+      `<div class="${C.section}${i < last ? ' border-b b-subtle' : ''}"><h2 class="${C.h2}">${titleHtml(s.title)}</h2>${renderBlocks(s)}</div>`
     ).join('');
   }
 
@@ -118,6 +118,6 @@
     })
     .catch((err) => {
       document.getElementById('resume-root').innerHTML =
-        `<p class="text-sm text-red-700">Could not load content/resume.md (${err.message}). If you opened the file directly, run <code>python3 -m http.server</code> and visit http://localhost:8000.</p>`;
+        `<p class="text-sm" style="color: var(--status-risk)">Could not load content/resume.md (${err.message}). If you opened the file directly, run <code>python3 -m http.server</code> and visit http://localhost:8000.</p>`;
     });
 })();

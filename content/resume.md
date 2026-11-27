@@ -22,7 +22,7 @@ Human Factors and UX design professional with 18+ years of experience in hardwar
 
 Lead human factors research on gaming peripherals, from study design to analysis, and bring the findings to product and engineering teams to inform development decisions.
 
-- **Research program and scope.** Defined research use cases, in-game tasks, protocols, performance metrics and data collection for new gaming keyboard interactions, across [number] studies / products since [year].
+- **Research program and scope.** Define research use cases, in-game tasks, protocols, performance metrics and data collection for new gaming keyboard interactions, across [number] studies / products since [year].
 - **Keyboard interaction study (esports).** Designed and ran a 24-participant within-subject study with professional and university esports players, using a modified Counter-Strike map and TMR sensors. Analyzed the results with ANOVA and a Bayesian model.
   - **Result:** [X] ms more time available for an accurate shot and [Y] ms improvement in movement timing, compared with [baseline]. [Perceived benefit by function].
   - **Outcome:** [product decision, e.g. feature shipped / roadmap change / not pursued].

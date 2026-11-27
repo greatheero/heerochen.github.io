@@ -7,7 +7,7 @@ function switchView(viewName) {
   // Reset nav active state
   ['resume', 'projects', 'contact'].forEach(item => {
     const navEl = document.getElementById('nav-' + item);
-    if (navEl) navEl.style.color = '#000000';
+    if (navEl) navEl.classList.remove('is-active');
   });
 
   // Show selected view
@@ -16,7 +16,7 @@ function switchView(viewName) {
 
   // Highlight active nav item
   const activeNav = document.getElementById('nav-' + viewName);
-  if (activeNav) activeNav.style.color = '#EEA302';
+  if (activeNav) activeNav.classList.add('is-active');
 
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
@@ -39,3 +39,27 @@ function closeMessage() {
   msgBox.classList.remove('translate-y-0', 'opacity-100');
   msgBox.classList.add('translate-y-20', 'opacity-0', 'pointer-events-none');
 }
+
+// Light/dark theme toggle (persists choice; defaults to OS preference)
+function currentTheme() {
+  const set = document.documentElement.getAttribute('data-theme');
+  if (set) return set;
+  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+}
+
+function syncThemeToggle() {
+  const btn = document.getElementById('theme-toggle');
+  if (!btn) return;
+  const dark = currentTheme() === 'dark';
+  btn.setAttribute('aria-pressed', String(dark));
+  btn.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
+}
+
+function toggleTheme() {
+  const next = currentTheme() === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', next);
+  try { localStorage.setItem('theme', next); } catch (e) {}
+  syncThemeToggle();
+}
+
+syncThemeToggle();

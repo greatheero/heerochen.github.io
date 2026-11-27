@@ -3,12 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Heero Chen | Human Factors Engineer | UX Engineer</title>
+  <title>Heero Chen | Human Factors Engineer</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/hfe.css" />
+  <script>
+    // Apply saved theme before paint to avoid a flash
+    var t = null; try { t = localStorage.getItem('theme'); } catch (e) {}
+    if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', t);
+  </script>
 </head>
 <body>
 
@@ -16,18 +22,22 @@
   <header class="w-full px-6 md:px-12 py-7 flex flex-wrap items-center justify-between gap-4">
     <!-- Brand / Identity -->
     <a href="#home" onclick="switchView('home'); return false;" class="flex items-center gap-3 group">
-      <span class="w-6 h-6 rounded-full inline-block" style="background-color: #EEA302;"></span>
+      <span class="w-6 h-6 rounded-full inline-block dot-brand"></span>
       <div class="flex items-baseline gap-2.5">
-        <span class="text-xl md:text-[22px] font-bold tracking-tight text-black">Heero Chen</span>
-        <span class="text-sm md:text-[15px] font-light text-black">Human Factors Engineer | UX Designer</span>
+        <span class="text-xl md:text-[22px] font-bold tracking-tight c-ink">Heero Chen</span>
+        <span class="text-sm md:text-[15px] font-light c-muted">Human Factors Engineer</span>
       </div>
     </a>
 
     <!-- Navigation Links -->
     <nav aria-label="Primary Navigation" class="flex items-center text-[14px] md:text-[15px] font-normal">
-      <a href="#resume" onclick="switchView('resume'); return false;" id="nav-resume" class="nav-item px-4 hover:text-[#EEA302] transition-colors">Resume</a>
-      <a href="#projects" onclick="switchView('projects'); return false;" id="nav-projects" class="nav-item px-4 hover:text-[#EEA302] transition-colors">Projects</a>
-      <a href="#contact" onclick="switchView('contact'); return false;" id="nav-contact" class="nav-item pl-4 hover:text-[#EEA302] transition-colors">Contact</a>
+      <a href="#resume" onclick="switchView('resume'); return false;" id="nav-resume" class="nav-item px-4 ">Resume</a>
+      <a href="#projects" onclick="switchView('projects'); return false;" id="nav-projects" class="nav-item px-4 ">Projects</a>
+      <a href="#contact" onclick="switchView('contact'); return false;" id="nav-contact" class="nav-item pl-4">Contact</a>
+      <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Switch to dark mode" aria-pressed="false" onclick="toggleTheme()">
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
     </nav>
   </header>
 
@@ -49,16 +59,16 @@
 
         <!-- Right: Intro Text & Three Circular Buttons -->
         <div class="flex flex-col items-center md:items-start text-center md:text-left max-w-[460px]">
-          <h1 class="text-6xl sm:text-7xl lg:text-[92px] font-bold tracking-tight leading-none text-black mb-5">
+          <h1 class="text-6xl sm:text-7xl lg:text-[92px] font-bold tracking-tight leading-none c-ink mb-5">
             Hello
           </h1>
           
-          <h2 class="text-lg md:text-[20px] font-bold text-black mb-2.5">
-            A Snapshot About My Career
+          <h2 class="text-lg md:text-[20px] font-bold c-ink mb-2.5">
+            My Snapshot
           </h2>
           
-          <p class="text-[14.5px] leading-[1.65] font-normal text-[#1A1A1A] mb-8 max-w-[390px]">
-            I'm a 18+ years eingineer in human factors and UX: ergonomics-trained, running data-driven user research on gaming peripherals. I use within-subject experiments, sensor measurement, interviews, and statistics (ANOVA, mixed-effects, Bayesian) in Python. I also design products and design systems.
+          <p class="text-[14.5px] leading-[1.65] font-normal c-muted mb-8 max-w-[390px]">
+            With 18+ years in human factors and user experience engineering, I bridge ergonomics, engineering and product design with quantitative science. Currently focused on gaming peripherals, I combine sensor measurement and within-subject experiments with advanced statistical modeling (ANOVA, mixed-effects, Bayesian) in Python to turn complex human data into clear product decisions.
           </p>
 
           <!-- Circular Navigation Buttons -->
@@ -83,9 +93,9 @@
       <div class="mb-12 flex items-center justify-between">
         <div>
           <h1 class="text-4xl md:text-5xl font-bold tracking-tight">Resume</h1>
-          <p id="resume-subtitle" class="mt-3 text-sm text-neutral-600">Senior Innovation Project Manager · Human Factors Engineer · UX Designer</p>
+          <p id="resume-subtitle" class="mt-3 text-sm c-muted">Senior Innovation Project Manager · Human Factors Engineer · UX Designer</p>
         </div>
-        <button onclick="switchView('home')" class="text-sm underline hover:text-[#EEA302]">← Back to Home</button>
+        <button onclick="switchView('home')" class="text-sm underline link-primary">← Back to Home</button>
       </div>
 
       <!-- Resume content is rendered from content/resume.md by js/resume.js -->
@@ -96,30 +106,31 @@
     <section id="view-projects" class="page-section w-full max-w-[960px]">
       <div class="mb-12 flex items-center justify-between">
         <h1 class="text-4xl md:text-5xl font-bold tracking-tight">Projects</h1>
-        <button onclick="switchView('home')" class="text-sm underline hover:text-[#FF3B25]">← Back to Home</button>
+        <button onclick="switchView('home')" class="text-sm underline link-secondary">← Back to Home</button>
       </div>
 
       <div class="space-y-14">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div>
-            <h2 class="text-2xl font-bold mb-3">Project Name 01</h2>
-            <p class="text-[14.5px] leading-relaxed text-neutral-800">
-              I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font. I’m a great place for you to tell a story and let your users know a little more about you.
+            <h2 class="text-2xl font-bold mb-3">Typing Task</h2>
+            <!-- DRAFT description: for reference, edit freely -->
+            <p class="text-[14.5px] leading-relaxed c-ink">
+              A standardized user-testing task from logiTask for evaluating how well a keyboard supports typing. Participants type a passage while the screen marks their progress and flags mistakes, and they can correct errors with backspace or keep going. Performance is reported in words per minute (characters per minute for Simplified Chinese), which captures speed and errors together. Test duration, text, case sensitivity and “blocking” are all configurable, so results can be compared across keyboards and devices.
             </p>
           </div>
-          <div class="bg-neutral-300 h-64 flex items-center justify-center text-neutral-600 font-medium">
-            Editorial Layout Preview 01
+          <div class="flex items-center justify-center">
+            <img src="assets/tasks/typing.svg" alt="Typing task icon" class="h-64 w-64 object-contain">
           </div>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div>
             <h2 class="text-2xl font-bold mb-3">Project Name 02</h2>
-            <p class="text-[14.5px] leading-relaxed text-neutral-800">
+            <p class="text-[14.5px] leading-relaxed c-ink">
               I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font.
             </p>
           </div>
-          <div class="bg-neutral-300 h-64 flex items-center justify-center text-neutral-600 font-medium">
+          <div class="placeholder-block h-64 flex items-center justify-center font-medium">
             Editorial Layout Preview 02
           </div>
         </div>
@@ -131,9 +142,9 @@
       <div class="mb-10 flex items-center justify-between">
         <div>
           <h1 class="text-4xl md:text-5xl font-bold tracking-tight">Contact</h1>
-          <p class="text-sm mt-2 text-neutral-700">Looking forward to hearing from you</p>
+          <p class="text-sm mt-2 c-muted">Looking forward to hearing from you</p>
         </div>
-        <button onclick="switchView('home')" class="text-sm underline hover:text-[#008B8E]">← Back to Home</button>
+        <button onclick="switchView('home')" class="text-sm underline link-info">← Back to Home</button>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -148,32 +159,32 @@
           </div>
         </div>
 
-        <form onsubmit="event.preventDefault(); showMessage('Message submitted!');" class="space-y-4">
+        <form hidden onsubmit="event.preventDefault(); showMessage('Message submitted!');" class="space-y-4">
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label class="block text-xs font-medium mb-1">First Name *</label>
-              <input type="text" required class="w-full border border-black bg-transparent px-3 py-2 text-sm focus:outline-none focus:bg-white" />
+              <input type="text" required class="w-full field px-3 py-2 text-sm" />
             </div>
             <div>
               <label class="block text-xs font-medium mb-1">Last Name *</label>
-              <input type="text" required class="w-full border border-black bg-transparent px-3 py-2 text-sm focus:outline-none focus:bg-white" />
+              <input type="text" required class="w-full field px-3 py-2 text-sm" />
             </div>
           </div>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label class="block text-xs font-medium mb-1">Email *</label>
-              <input type="email" required class="w-full border border-black bg-transparent px-3 py-2 text-sm focus:outline-none focus:bg-white" />
+              <input type="email" required class="w-full field px-3 py-2 text-sm" />
             </div>
             <div>
               <label class="block text-xs font-medium mb-1">Subject</label>
-              <input type="text" class="w-full border border-black bg-transparent px-3 py-2 text-sm focus:outline-none focus:bg-white" />
+              <input type="text" class="w-full field px-3 py-2 text-sm" />
             </div>
           </div>
           <div>
             <label class="block text-xs font-medium mb-1">Message</label>
-            <textarea rows="4" class="w-full border border-black bg-transparent px-3 py-2 text-sm focus:outline-none focus:bg-white"></textarea>
+            <textarea rows="4" class="w-full field px-3 py-2 text-sm"></textarea>
           </div>
-          <button type="submit" class="w-full py-3 rounded-full border border-black font-bold text-base transition-colors hover:bg-[#F3F3F3]" style="background-color: #EEA302;">
+          <button type="submit" class="w-full py-3 rounded-full btn-pill font-bold text-base">
             Submit
           </button>
         </form>
@@ -184,52 +195,39 @@
 
   <!-- Footer -->
   <footer class="w-full px-6 md:px-12 pb-10 mt-auto">
-    <div class="w-full border-t border-[#C7C7C7] pt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-black">
-      
-      <!-- Column 1: Phone -->
-      <div>
-        <h3 class="font-bold text-[15px] mb-1">Phone</h3>
-        <a href="tel:123-456-7890" class="text-[13.5px] font-normal hover:underline">123-456-7890</a>
-      </div>
+    <div class="w-full border-t b-subtle pt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 c-ink">
 
-      <!-- Column 2: Email -->
+      <!-- Column 1: Email -->
       <div>
         <h3 class="font-bold text-[15px] mb-1">Email</h3>
-        <a href="mailto:info@mysite.com" class="text-[13.5px] font-normal hover:underline">info@mysite.com</a>
+        <a href="mailto:info@mysite.com" class="text-[13.5px] font-normal hover:underline">greatheero@gmail.com</a>
       </div>
 
-      <!-- Column 3: Follow Me -->
+      <!-- Column 2: Follow Me -->
       <div>
         <h3 class="font-bold text-[15px] mb-1.5">Follow Me</h3>
         <div class="flex items-center gap-3">
           <!-- LinkedIn Icon -->
-          <a href="#linkedin" aria-label="LinkedIn" class="text-black hover:opacity-70 transition-opacity">
+          <a href="https://www.linkedin.com/in/heero-chen-83727746/" aria-label="LinkedIn" class="c-ink hover:opacity-70 transition-opacity">
             <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
               <path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/>
-            </svg>
-          </a>
-          <!-- Twitter Icon -->
-          <a href="#twitter" aria-label="Twitter" class="text-black hover:opacity-70 transition-opacity">
-            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
-              <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
             </svg>
           </a>
         </div>
       </div>
 
-      <!-- Column 4: Copyright -->
-      <div class="lg:text-right text-[12px] leading-relaxed text-[#1A1A1A]">
+      <!-- Column 3: Copyright -->
+      <div class="lg:text-right text-[12px] leading-relaxed c-muted">
         <p>© 2027 By Heero Chen.</p>
-        <p>Powered and secured by <a href="https://www.wix.com" target="_blank" rel="noopener noreferrer" class="underline">Wix</a></p>
       </div>
 
     </div>
   </footer>
 
   <!-- Custom Message Box to replace alert() -->
-  <div id="message-box" class="fixed bottom-4 right-4 bg-black text-white px-6 py-3 rounded shadow-lg transform transition-transform duration-300 translate-y-20 opacity-0 pointer-events-none flex items-center justify-between gap-4 z-50">
+  <div id="message-box" class="fixed bottom-4 right-4 toast px-6 py-3 rounded shadow-lg transform transition-transform duration-300 translate-y-20 opacity-0 pointer-events-none flex items-center justify-between gap-4 z-50">
       <span id="message-text">Message sent</span>
-      <button type="button" onclick="closeMessage()" class="text-white hover:text-gray-300 font-bold">&times;</button>
+      <button type="button" onclick="closeMessage()" class="font-bold hover:opacity-70">&times;</button>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>

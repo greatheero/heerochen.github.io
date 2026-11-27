@@ -1,0 +1,238 @@
+/* ==========================================================================
+   Botanical Ergonomics — Human Factors Portfolio Design Tokens (WCAG 2.2)
+   ========================================================================== */
+
+:root {
+  /* Surfaces & Neutrals (60% Canvas / 30% Structure & Type) */
+  --bg-canvas: #F5F6F2;
+  --bg-surface: #E6EAE2;
+  --bg-surface-elevated: #EDF0EA;
+
+  /* Borders */
+  --border-subtle: #D3DBD0;
+  --border-strong: #707F75; /* >= 3:1 on canvas for WCAG 1.4.11 */
+
+  /* Typography */
+  --text-primary: #19241E;  /* 14.7:1 AAA */
+  --text-muted: #4B5950;    /* 6.8:1 AA+ */
+  --text-on-primary: #F5F6F2;
+  --text-on-secondary: #FFFFFF;
+
+  /* Brand & Interactive Accents (10% Budget) */
+  --accent-primary: #235D42;
+  --accent-primary-hover: #194732;
+  --accent-secondary: #A64B2A;
+  --accent-secondary-soft: #F3E5DF; /* Soft tint for tag backgrounds */
+
+  /* Semantic Status Tokens (Always pair with icon + text label) */
+  --status-pass: #1F6E4A;
+  --status-caution: #9A5B00;
+  --status-risk: #B42318;
+  --status-info: #1E5278;
+
+  /* Accessibility & Ergonomic Focus */
+  --focus-ring: #19241E;
+  --focus-offset: 3px;
+}
+
+/* Companion Dark Mode (Manual Toggle or OS Preference) */
+[data-theme="dark"] {
+  --bg-canvas: #121814;
+  --bg-surface: #1B241E;
+  --bg-surface-elevated: #232E27;
+
+  --border-subtle: #2B3830;
+  --border-strong: #738579; /* 4.5:1 on canvas */
+
+  --text-primary: #ECEFE9;  /* 15.5:1 AAA */
+  --text-muted: #A1B0A6;    /* 7.9:1 AAA */
+  --text-on-primary: #121814; /* High-contrast dark ink on lightened sage button */
+  --text-on-secondary: #121814;
+
+  --accent-primary: #6DC095;
+  --accent-primary-hover: #84CEA7;
+  --accent-secondary: #E58D6B;
+  --accent-secondary-soft: #31211B;
+
+  --status-pass: #6DC095;
+  --status-caution: #F0B44C;
+  --status-risk: #F97066;
+  --status-info: #73B3E6;
+
+  --focus-ring: #ECEFE9;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg-canvas: #121814;
+    --bg-surface: #1B241E;
+    --bg-surface-elevated: #232E27;
+    --border-subtle: #2B3830;
+    --border-strong: #738579;
+    --text-primary: #ECEFE9;
+    --text-muted: #A1B0A6;
+    --text-on-primary: #121814;
+    --text-on-secondary: #121814;
+    --accent-primary: #6DC095;
+    --accent-primary-hover: #84CEA7;
+    --accent-secondary: #E58D6B;
+    --accent-secondary-soft: #31211B;
+    --status-pass: #6DC095;
+    --status-caution: #F0B44C;
+    --status-risk: #F97066;
+    --status-info: #73B3E6;
+    --focus-ring: #ECEFE9;
+  }
+}
+
+/* Base Ergonomic Defaults */
+body {
+  background-color: var(--bg-canvas);
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: var(--focus-offset);
+}
+
+a {
+  color: var(--accent-primary);
+  text-underline-offset: 0.2em;
+  text-decoration-thickness: 1.5px;
+}
+
+a:hover {
+  color: var(--accent-primary-hover);
+}
+/* ==========================================================================
+   Layout & Components (migrated from style.css, now token-driven)
+   ========================================================================== */
+
+body {
+  font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Token-based colour utilities (replace hardcoded Tailwind colours) */
+.c-ink       { color: var(--text-primary); }
+.c-muted     { color: var(--text-muted); }
+.b-subtle    { border-color: var(--border-subtle); }
+.dot-brand   { background-color: var(--accent-primary); }
+.link-primary:hover   { color: var(--accent-primary); }
+.link-secondary:hover { color: var(--accent-secondary); }
+.link-info:hover      { color: var(--status-info); }
+.placeholder-block { background-color: var(--bg-surface); color: var(--text-muted); }
+
+/* Navigation */
+.nav-item { color: var(--text-primary); transition: color 0.2s ease; }
+.nav-item:hover, .nav-item.is-active { color: var(--accent-primary); }
+.nav-item + .nav-item { border-left: 1px solid var(--border-strong); }
+
+/* Theme toggle */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  margin-left: 1rem;
+  border-radius: 9999px;
+  border: 1px solid var(--border-strong);
+  background: transparent;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.theme-toggle:hover { background-color: var(--bg-surface); }
+.theme-toggle svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.theme-toggle .icon-sun { display: none; }
+:root[data-theme="dark"] .theme-toggle .icon-sun { display: block; }
+:root[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
+
+/* Circular Action Buttons */
+.circle-btn {
+  width: 136px;
+  height: 136px;
+  border-radius: 9999px;
+  border: 1px solid var(--border-strong);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 1.05rem;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  user-select: none;
+}
+.btn-resume   { background-color: var(--accent-primary);   color: var(--text-on-primary); }
+.btn-projects { background-color: var(--accent-secondary); color: var(--text-on-secondary); }
+.btn-contact  { background-color: var(--status-info);      color: var(--text-on-primary); }
+.circle-btn:hover { background-color: var(--bg-canvas); color: var(--text-primary); }
+
+/* Primary pill button (contact form submit) */
+.btn-pill {
+  border: 1px solid var(--border-strong);
+  background-color: var(--accent-primary);
+  color: var(--text-on-primary);
+  transition: background-color 0.2s ease;
+}
+.btn-pill:hover { background-color: var(--accent-primary-hover); }
+
+/* Form fields */
+.field {
+  border: 1px solid var(--border-strong);
+  background: transparent;
+  color: var(--text-primary);
+}
+.field:focus { background-color: var(--bg-surface-elevated); }
+
+/* Toast */
+.toast { background-color: var(--text-primary); color: var(--bg-canvas); }
+
+/* Portrait */
+.portrait-wrapper {
+  width: 440px;
+  height: 440px;
+  border-radius: 9999px;
+  overflow: hidden;
+  background-color: var(--bg-surface);
+  flex-shrink: 0;
+}
+.portrait-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  filter: grayscale(100%) contrast(1.05);
+}
+
+@media (max-width: 1024px) {
+  .portrait-wrapper { width: 340px; height: 340px; }
+  .circle-btn { width: 112px; height: 112px; font-size: 0.95rem; }
+}
+@media (max-width: 640px) {
+  .portrait-wrapper { width: 260px; height: 260px; }
+  .circle-btn { width: 96px; height: 96px; font-size: 0.9rem; }
+}
+
+/* View Transitions */
+.page-section { display: none; animation: fadeIn 0.3s ease-in-out; }
+.page-section.active { display: block; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-section { animation: none; }
+  body, .circle-btn { transition: none; }
+}

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0f2b8c"/><stop offset="1" stop-color="#12b7d4"/></linearGradient>
+<linearGradient id="gf" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".34"/><stop offset="1" stop-color="#fff" stop-opacity=".08"/></linearGradient>
+<linearGradient id="sheen" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".38"/><stop offset=".45" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<linearGradient id="ge" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".95"/><stop offset=".35" stop-color="#fff" stop-opacity=".15"/><stop offset=".65" stop-color="#fff" stop-opacity=".1"/><stop offset="1" stop-color="#fff" stop-opacity=".7"/></linearGradient>
+<linearGradient id="rg" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ff3b30"/><stop offset="1" stop-color="#30d158"/></linearGradient>
+<linearGradient id="gloss" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".35"/><stop offset=".5" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<filter id="sh" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="12" stdDeviation="13" flood-color="#000" flood-opacity=".28"/></filter>
+<filter id="blur12"><feGaussianBlur stdDeviation="12"/></filter>
+<filter id="blob" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="38"/></filter>
+<clipPath id="card"><rect width="512" height="512" rx="104"/></clipPath>
+</defs>
+<g clip-path="url(#card)">
+<rect width="512" height="512" fill="url(#bg)"/>
+<circle cx="90" cy="80" r="110" fill="#7df9ff" opacity=".75" filter="url(#blob)"/>
+<circle cx="450" cy="150" r="90" fill="#fff" opacity=".35" filter="url(#blob)"/>
+<circle cx="380" cy="470" r="120" fill="#7df9ff" opacity=".6" filter="url(#blob)"/>
+<circle cx="256" cy="215" r="128" fill="rgba(255,255,255,.01)" filter="url(#sh)"/><circle cx="256" cy="215" r="128" fill="url(#gf)"/><circle cx="256" cy="215" r="128" fill="none" stroke="url(#ge)" stroke-width="2"/><circle cx="256" cy="215" r="82" fill="rgba(20,20,60,.25)"/><circle cx="256" cy="215" r="82" fill="none" stroke="url(#ge)" stroke-width="2"/><circle cx="256" cy="215" r="105" fill="none" stroke="rgba(255,255,255,.8)" stroke-width="3" stroke-dasharray="3 10" stroke-linecap="round"/><circle cx="308.5" cy="124.06733260263395" r="27" fill="rgba(255,255,255,.01)" filter="url(#sh)"/><circle cx="308.5" cy="124.06733260263395" r="27" fill="url(#gf)"/><circle cx="308.5" cy="124.06733260263395" r="27" fill="#30d5ff" opacity="0.75"/><circle cx="308.5" cy="124.06733260263395" r="27" fill="url(#sheen)"/><circle cx="308.5" cy="124.06733260263395" r="27" fill="none" stroke="url(#ge)" stroke-width="2.5"/><path d="M300.5 124.06733260263395 L316.5 124.06733260263395 M310.5 117.06733260263395 L317.5 124.06733260263395 L310.5 131.06733260263394" stroke="#fff" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="116" y="430" width="280" height="50" rx="25" fill="rgba(255,255,255,.01)" filter="url(#sh)"/><rect x="116" y="430" width="280" height="50" rx="25" fill="url(#gf)"/><rect x="116" y="430" width="280" height="50" rx="25" fill="url(#sheen)"/><rect x="116" y="430" width="280" height="50" rx="25" fill="none" stroke="url(#ge)" stroke-width="2"/>
+<text x="256" y="463" font-size="23" font-weight="600" text-anchor="middle" fill="#fff" font-family="-apple-system,SF Pro Rounded,Helvetica Neue,Arial">Steering</text>
+<rect width="512" height="512" rx="104" fill="url(#gloss)" opacity=".5"/>
+</g>
+<rect x="1.5" y="1.5" width="509" height="509" rx="102.5" fill="none" stroke="url(#ge)" stroke-width="3"/>
+</svg>
